@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { FloatingNav } from "@/components/ui/floating-navbar";
+import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
+
+
+import { ThemeProvider as NextThemesProvider } from "next-themes"
+import Footer from "@/components/footer";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,12 +30,41 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <NextThemesProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+           <FloatingNav navItems={navItems}/>
+          {children}
+           {/* Footer placed immediately after with no wrapper div creating extra space */}
+      <Footer/>
+        </NextThemesProvider>
       </body>
     </html>
   );
 }
+const navItems = [
+  {
+    name: "Home",
+    link: "/",
+    icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
+  },
+  {
+    name: "About",
+    link: "/about",
+    icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
+  },
+  {
+    name: "projects",
+    link: "/projects",
+    icon: (
+      <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />
+    ),
+  },
+];
