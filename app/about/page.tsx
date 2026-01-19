@@ -64,19 +64,7 @@ const AboutPage = () => {
           {/* Right Column: Quick Stats & Location */}
           <div className="lg:col-span-5 space-y-8">
             {/* Location Card */}
-            <div className="relative group overflow-hidden rounded-3xl border border-white/10 aspect-square lg:aspect-auto lg:h-[300px] bg-black-200">
-              <div className="absolute inset-0 z-0 grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700">
-                {/* Insert a map image or a styled globe here */}
-                <Image src="/b1.svg" alt="Location" fill className="object-cover" />
-              </div>
-              <div className="relative z-10 p-8 h-full flex flex-col justify-end bg-gradient-to-t from-black to-transparent">
-                <div className="flex items-center gap-2 text-white mb-2">
-                  <HiOutlineGlobeAlt className="text-purple text-xl" />
-                  <span className="font-bold tracking-wider uppercase text-sm">Based in</span>
-                </div>
-                <h3 className="text-3xl font-black text-white italic">GABORONE, BW </h3>
-              </div>
-            </div>
+          
 
             {/* Engineering Values */}
             <div className="p-8 rounded-3xl border border-white/10 bg-black-200/50">
@@ -90,6 +78,19 @@ const AboutPage = () => {
                 ))}
               </ul>
             </div>
+            <div className="p-8 rounded-3xl border border-white/10 bg-black-200/50">
+              <h3 className="text-sm font-black text-zinc-500 uppercase tracking-[4px] mb-6">SOCIAL VALUES</h3>
+              <ul className="space-y-4">
+                {['Respect', 'Teamwork', 'Accountability', ' continuous learning'].map((val) => (
+                  <li key={val} className="flex items-center gap-3 text-white text-sm">
+                    <div className="w-1.5 h-1.5 rounded-full bg-purple" />
+                    {val}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+
           </div>
         </div>
       </div>
