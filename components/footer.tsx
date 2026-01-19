@@ -32,7 +32,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <div className="mb-6">
               <span className="text-2xl font-black tracking-tighter uppercase italic">
-                DEV<span className="text-zinc-500">PORT</span>
+                LE<span className="text-zinc-500">TSO</span>
               </span>
             </div>
             <p className="text-sm text-zinc-400 mb-6 leading-relaxed">

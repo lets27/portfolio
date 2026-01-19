@@ -94,7 +94,7 @@ export const LetsoProjects = [
     year: 2025,
     type: "Personal", 
     status: "Live", // Added status
-    url: "https://next-blog-app-xi-eight.vercel.app",
+    url: "https://next-blog-main-two.vercel.app",
     img: "/p2.svg"
   },
   {
