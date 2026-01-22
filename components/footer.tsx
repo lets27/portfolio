@@ -45,8 +45,8 @@ const Footer = () => {
             </div>
           </div>
 
-          <FooterColumn title="Projects" links={['SaaS Platforms', 'Web Apps', 'UI Kits']} />
-          <FooterColumn title="Stack" links={['React', 'Next.js', 'TypeScript']} />
+   
+          
           <FooterColumn title="Navigation" links={['about', 'projects']} />
 
           {/* Column 5: Status */}

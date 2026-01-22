@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { TextGenerateEffect } from './ui/text-generate-effect';
 import LightUpBtn from './ui/LightUpBtns';
 import { FaLocationArrow } from 'react-icons/fa';
+import Link from 'next/link';
 const Hero = () => {
     const handleClick=()=>{}
   return (
@@ -39,8 +40,8 @@ const Hero = () => {
    <p className='text-center md:tracking-wider mb-4 text-sm md:text-lg'>
   Hi! I&apos;m <span className="text-purple">Letso</span>, a Computer Systems Engineer & Full-stack Developer based in Botswana.
 </p>
-    <a href="#about"><LightUpBtn title="show my work" position="left" 
-    icon={<FaLocationArrow/>}/></a>
+    <Link href="/projects"><LightUpBtn title="show my work" position="left" 
+    icon={<FaLocationArrow/>}/></Link>
     </div>
 </div>
 

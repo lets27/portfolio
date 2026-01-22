@@ -89,8 +89,6 @@ const AboutPage = () => {
                 ))}
               </ul>
             </div>
-
-
           </div>
         </div>
       </div>
