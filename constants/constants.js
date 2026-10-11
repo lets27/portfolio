@@ -116,8 +116,20 @@ export const LetsoProjects = [
     status: "Beta", // Added status
     url: "https://solar-bw.com",
     img: "/p3.svg"
+  },
+  {
+    id: 5,
+    name: "Bocra hackathon project",
+    description: "Bocra hackathon website remodelling March 2026",
+    year: 2026,
+    type: "Competition",
+    status: "Live", // Added status
+    url: "https://vortex-dev-bocra-main-updated.vercel.app",
+    img: "/p3.svg"
   }
 ];
+
+
   export const projects = [
     {
       id: 1,

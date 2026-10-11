@@ -27,19 +27,24 @@ const config: Config = {
       colors: {
         black: {
           DEFAULT: "#000",
-          100: "#000319",
-          200: "rgba(17, 25, 40, 0.75)",
-          300: "rgba(255, 255, 255, 0.125)",
+          100: "#020617", // slate-950
+          200: "#0f172a", // slate-900
+          300: "#1e293b", // slate-800
         },
         white: {
-          DEFAULT: "#FFF",
-          100: "#BEC1DD",
-          200: "#C1C2D3",
+          DEFAULT: "#FFFFFF",
+          100: "#f8fafc", // slate-50
+          200: "#e2e8f0", // slate-200
+        },
+        brand: {
+          primary: "#3b82f6", // blue-500
+          secondary: "#8b5cf6", // violet-500
+          accent: "#2dd4bf", // teal-400
         },
         blue: {
-          "100": "#E4ECFF",
+          "100": "#dbeafe",
         },
-        purple: "#CBACF9",
+        purple: "#a78bfa",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -75,6 +80,9 @@ const config: Config = {
         },
       },
       borderRadius: {
+        xl: "1rem",
+        "2xl": "1.5rem",
+        "3xl": "2rem",
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",

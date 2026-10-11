@@ -35,15 +35,13 @@ const GridCard = ({ item }: { item: any }) => {
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-3xl border border-white/10 transition-all duration-500 group min-h-[160px]",
-        // Aceternity Hover Effects: Lift and Glow
-        "hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(34,197,94,0.15)]",
-        // Background logic
-        "bg-gradient-to-r from-[#04071D] to-[#0C0E23]",
+        "relative overflow-hidden group min-h-[200px] rounded-2xl",
+        "glassmorphism transition-all duration-500",
+        "hover:border-white/20 hover:shadow-[0_0_40px_rgba(59,130,246,0.1)]",
         item.className
       )}
     >
-      {/* 1. Background Image Layer */}
+      {/* Background Image Layer */}
       {item.img && (
         <div className="absolute inset-0 z-0">
           <Image
@@ -51,83 +49,62 @@ const GridCard = ({ item }: { item: any }) => {
             alt={item.title}
             fill
             className={cn(
-              "object-cover transition-transform duration-700 group-hover:scale-110 opacity-50",
+              "object-cover transition-transform duration-700 group-hover:scale-105 opacity-20",
               item.imgClassName
             )}
           />
-          {/* Subtle Vignette for Readability */}
-          <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
         </div>
       )}
 
-      {/* 2. Background Animations (for specific IDs) */}
-      {(item.id=== 6) && (
+      {/* Background Animations */}
+      {item.id === 6 && (
         <div className="absolute inset-0 z-0">
           <BackgroundGradientAnimation />
         </div>
       )}
 
-      {/* 3. Spare Image (Usually the grid pattern overlay) */}
-      {item.spareImg && (
-        <div className="absolute right-0 bottom-0 w-full opacity-30 z-0">
-          <Image
-            src={item.spareImg}
-            alt=""
-            width={200}
-            height={200}
-            className="object-contain"
-          />
-        </div>
-      )}
-
-      {/* 4. Content Layer */}
+      {/* Content Layer */}
       <div
         className={cn(
-          "relative z-10 flex flex-col h-full p-4 lg:p-6",
+          "relative z-10 flex flex-col h-full p-6 lg:p-8",
           item.titleClassName
         )}
       >
- 
-        <div className="flex flex-col gap-1">
-        
-          <h3 className="text-sm lg:text-lg font-bold text-green-400 leading-tight">
-            {item.title}
-          </h3>
-            {item.description && (
-            <p className="text-[10px] lg:text-xs uppercase tracking-[2px] font-bold text-[#C1C2D3]">
+        <div className="flex flex-col gap-2">
+          {item.description && (
+            <p className="text-[10px] uppercase tracking-[3px] font-semibold text-brand-accent/80">
               {item.description}
             </p>
-         
           )}
+          <h3 className="text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug">
+            {item.title}
+          </h3>
         </div>
-    {item.stack && (
-          <div className="flex flex-wrap gap-2 mb-3 pt-4">
+
+        {item.stack && (
+          <div className="flex flex-wrap gap-2 mt-6">
             {item.stack.map((tech: string, index: number) => (
               <span 
                 key={index} 
-                className="py-1 px-2 text-[10px] lg:text-xs opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E] text-white border border-white/10"
+                className="py-1 px-3 text-[10px] lg:text-xs rounded-full bg-white/[0.05] text-white/70 border border-white/10 backdrop-blur-sm transition-colors hover:bg-white/[0.1] hover:text-white"
               >
                 {tech}
               </span>
             ))}
           </div>
         )}
-      
 
-
-        {/* 6. Copy Email Button (for ID 6) */}
+        {/* Copy Email Button */}
         {item.id === 6 && (
-          <div className="mt-5 relative">
+          <div className="mt-auto pt-6">
             <button 
               onClick={handleCopy}
-              className="bg-[#161a31] no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6 text-white inline-block"
+              className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
             >
-              <span className="absolute inset-0 overflow-hidden rounded-full">
-                <span className="absolute inset-0 bg-[radial-gradient(75%_100%_at_50%_0%,rgba(52,211,153,0.6)_0%,rgba(52,211,153,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#3b82f6_0%,#8b5cf6_50%,#3b82f6_100%)]" />
+              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-6 py-1 text-sm font-medium text-white backdrop-blur-3xl transition-all hover:bg-slate-900">
+                {copied ? "Email Copied!" : "Get in Touch"}
               </span>
-              <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-2 px-4 ring-1 ring-white/10 ">
-                <span>{copied ? "Email Copied!" : "Copy my email"}</span>
-              </div>
             </button>
           </div>
         )}

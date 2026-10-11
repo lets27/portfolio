@@ -1,5 +1,4 @@
 
-
 // app/components/Grid.tsx
 import Image from "next/image";
 import { gridItems } from "@/constants/constants";
