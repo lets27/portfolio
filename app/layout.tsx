@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 
