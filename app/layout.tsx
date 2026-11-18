@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
-
+import "./globals.css";
 
 import { ThemeProvider as NextThemesProvider } from "next-themes"
 import Footer from "@/components/footer";
