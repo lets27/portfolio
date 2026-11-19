@@ -111,7 +111,7 @@ const Hero = () => {
             transition={{ delay: 1.8, duration: 0.5 }}
             className="flex flex-col sm:flex-row gap-6 items-center"
           >
-            <Link href="#projects">
+            <Link href="/projects">
               <LightUpBtn 
                 title="View Portfolio" 
                 position="right" 
